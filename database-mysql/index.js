@@ -3,12 +3,12 @@ var mysql = require('mysql');
 var connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
-  password : 'FILL_ME_IN',
-  database : 'test'
+  password : '',
+  database : 'linkspeak'
 });
 
-var selectAll = function(callback) {
-  connection.query('SELECT * FROM items', function(err, results, fields) {
+var addNewUser = (params, callback) => {
+  connection.query('INSERT INTO user SET username = ?, password = ?', params, (err, results) => {
     if(err) {
       callback(err, null);
     } else {
@@ -17,4 +17,15 @@ var selectAll = function(callback) {
   });
 };
 
-module.exports.selectAll = selectAll;
+var checkUser = (callback) => {
+  connection.query('SELECT username FROM user', (err, results) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, results);
+    }
+  })
+}
+
+module.exports.addNewUser = addNewUser;
+module.exports.checkUser = checkUser;

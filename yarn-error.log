@@ -1,0 +1,55 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.3.2/libexec/bin/yarn.js add semantic-ui-react
+
+PATH: 
+  /Users/klrgch/.jenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.3.2
+
+Node version: 
+  8.8.1
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "Mvp-Plus",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "react-dev": "webpack -d --watch",
+      "server-dev": "nodemon server/index.js"
+    },
+    "author": "Brian Kim",
+    "license": "ISC",
+    "devDependencies": {
+      "babel-core": "^6.23.1",
+      "babel-loader": "^6.3.2",
+      "babel-preset-es2015": "^6.22.0",
+      "babel-preset-react": "^6.23.0",
+      "webpack": "^2.2.1"
+    },
+    "dependencies": {
+      "angular": "^1.6.3",
+      "body-parser": "^1.17.2",
+      "express": "^4.15.0",
+      "jquery": "^3.1.1",
+      "mongoose": "^4.8.6",
+      "mysql": "^2.13.0",
+      "react": "^15.4.2",
+      "react-dom": "^15.4.2",
+      "semantic-ui": "^2.2.13"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: EACCES: permission denied, mkdir '/Users/klrgch/Desktop/Personal/MvpPlus/node_modules/semantic-ui/node_modules'

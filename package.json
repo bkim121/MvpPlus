@@ -24,6 +24,9 @@
     "mongoose": "^4.8.6",
     "mysql": "^2.13.0",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-password-mask": "^3.2.0",
+    "semantic-ui": "^2.2.13",
+    "semantic-ui-react": "^0.77.1"
   }
 }
