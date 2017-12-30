@@ -27,5 +27,17 @@ var checkUser = (callback) => {
   })
 }
 
+var findUser = (params, callback) => {
+  connection.query('SELECT * FROM user WHERE username = ?', params, (err, results) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, results);
+    }
+  })
+}
+
+
 module.exports.addNewUser = addNewUser;
 module.exports.checkUser = checkUser;
+module.exports.findUser = findUser;

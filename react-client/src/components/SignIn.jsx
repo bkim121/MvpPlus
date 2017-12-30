@@ -1,7 +1,6 @@
 import React from 'react';
 import { Container, Header, Input, Segment, Button} from 'semantic-ui-react';
 import $ from 'jquery';
-import ListItem from './ListItem.jsx';
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -13,18 +12,27 @@ class SignIn extends React.Component {
   }
 
   checkNewUser() {
-    var data = {
-      username: this.state.username,
-      password: this.state.password
+    if (this.state.password.length < 8){
+      alert('needs a longer password')
+    } else {
+      var data = {
+        username: this.state.username,
+        password: this.state.password
+      }
+      $.ajax({
+        url: '/signup',
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(data),
+        success: (data) => {
+          if (data === 'new'){
+            this.props.newUser(this.state.username)
+          } else {
+            alert('need another username')
+          }
+        }
+      })
     }
-    console.log(data)
-    $.ajax({
-      url: '/signup',
-      method: 'POST',
-      contentType: 'application/json',
-      data: JSON.stringify(data),
-      success: (data) => console.log(data)
-    })
   }
 
   usernameCreate(e) {

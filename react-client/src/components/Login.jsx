@@ -1,5 +1,6 @@
 import React from 'react';
 import PasswordMask from 'react-password-mask';
+import $ from 'jquery';
 import { Container, Header, Input, Segment, Button} from 'semantic-ui-react'
 import SignIn from './SignIn.jsx';
 
@@ -13,9 +14,6 @@ class Login extends React.Component {
     }
   }
 
-  checkUser() {
-    console.log('hello')
-  }
 
   usernameInsert(e) {
     this.setState({ username: e.target.value });
@@ -25,6 +23,29 @@ class Login extends React.Component {
   passwordInsert(e) {
     this.setState({ password: e.target.value });
     console.log(e.target.value)
+  }
+
+  checkUser() {
+    if (this.state.password.length !== 0){
+      var data = {
+        username: this.state.username,
+        password: this.state.password
+      }
+      $.ajax({
+        url: '/login',
+        contentType: 'application/JSON',
+        method: 'POST',
+        data: JSON.stringify(data),
+        success: (data) => {
+          if (data === 'match'){
+            this.props.change(this.state.username)
+          } else {
+            alert('wrong password')
+          }
+        }
+      })
+      // this.props.change()
+    }
   }
 
   signUp() {
@@ -50,7 +71,7 @@ class Login extends React.Component {
       )
     } else if (this.state.page === 'signup') {
       return (
-        <SignIn/>
+        <SignIn newUser={this.props.change.bind(this)}/>
       )
     }
   }

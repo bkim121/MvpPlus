@@ -1,12 +1,20 @@
 import React from 'react';
-import ListItem from './ListItem.jsx';
+import { Divider, Segment } from 'semantic-ui-react'
 
-const List = (props) => (
-  <div>
-    <h4> List Component </h4>
-    There are { props.items.length } items.
-    { props.items.map(item => <ListItem item={item}/>)}
-  </div>
-)
+class List extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    }
+  }
+
+  render () {
+    return (
+      <Segment style={{ float: 'right', width: '30%', position: 'relative', top: '15px', bottom: '5%'}}>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore...
+      </Segment>
+    )
+  }
+}
 
 export default List;
