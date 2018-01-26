@@ -12,7 +12,7 @@ class Home extends React.Component {
   render () {
     return (
       <div style={{margin: '5% 5% 5% 5%'}}>
-        <Survey/>
+        <Survey user={this.props.user}/>
         <List/>
       </div>
     )

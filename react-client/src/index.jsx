@@ -57,9 +57,9 @@ class App extends React.Component {
 
   loginStatus() {
     if (this.state.user === undefined){
-      return <Button floated='right' onClick={this.changeLogin.bind(this)}>Login</Button>
+      return <Button floated='right' style={{ 'margin-right': '2%', 'marginTop': '-3%'}} onClick={this.changeLogin.bind(this)}>Login</Button>
     } else {
-      return <Button floated='right' onClick={this.logOut.bind(this)}>Logout</Button>
+      return <Button floated='right' style={{ 'margin-right': '2%', 'marginTop': '-3%'}}  onClick={this.logOut.bind(this)}>Logout</Button>
     }
   }
 
@@ -68,7 +68,7 @@ class App extends React.Component {
   render () {
     return (
     <div>
-      <Header textAlign='center'>LinkSpeak</Header>
+      <Header textAlign='center' style={{ 'margin-top': '1%'}} >LinkSpeak</Header>
       <div> { this.loginStatus() } </div>
       <div> { this.currentView() } </div>
     </div>
