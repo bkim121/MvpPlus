@@ -10,8 +10,8 @@ class List extends React.Component {
 
   render () {
     return (
-      <Segment style={{ float: 'right', width: '30%', position: 'relative', marginTop: '0.5%', marginBottom: '5%'}}>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore...
+      <Segment style={{ float: 'right', width: '20%', position: 'relative', 'marginTop': '-40px'}}>
+      <div style={{'height': '610px'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore... </div>
       </Segment>
     )
   }

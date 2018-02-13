@@ -22,10 +22,10 @@ class Survey extends React.Component {
 
   render () {
     return (
-      <Segment style={{ float: 'left', width: '67%', position: 'relative', 'marginTop': '5px', 'marginBottom': '5%'}}>
-      <div> {this.surveyView()} </div>
+      <Segment style={{ float: 'left', 'width': '77%', position: 'relative', 'marginTop': '-40px'}}>
+      <div style={{'height': '450px'}}> {this.surveyView()} </div>
       <Divider section />
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore...
+      <div style={{'height': '100px'}}> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore... </div>
       </Segment>
     )
   }

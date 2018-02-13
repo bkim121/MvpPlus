@@ -52,7 +52,7 @@ class SignIn extends React.Component {
         <Segment.Group>
           <Segment.Group>
             <Segment textAlign='center'>UserName: <Input placeholder='Username...' onChange={this.usernameCreate.bind(this)}/></Segment>
-            <Segment textAlign='center'>Password: <Input placeholder='Password...' onChange={this.passwordCreate.bind(this)}/></Segment>
+            <Segment textAlign='center'>Password: <Input placeholder='Password...' type="password" onChange={this.passwordCreate.bind(this)}/></Segment>
             <Segment textAlign='center' onClick={this.checkNewUser.bind(this)}><Button>SignUp</Button></Segment>
           </Segment.Group>
         </Segment.Group>

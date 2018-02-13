@@ -17,12 +17,11 @@ class Login extends React.Component {
 
   usernameInsert(e) {
     this.setState({ username: e.target.value });
-    console.log(e.target.value)
   }
 
   passwordInsert(e) {
     this.setState({ password: e.target.value });
-    console.log(e.target.value)
+
   }
 
   checkUser() {
@@ -62,7 +61,7 @@ class Login extends React.Component {
         <Segment.Group>
           <Segment.Group>
             <Segment textAlign='center'>UserName: <Input placeholder='Username...' onChange={this.usernameInsert.bind(this)}/></Segment>
-            <Segment textAlign='center'>Password: <Input placeholder='Password...' onChange={this.passwordInsert.bind(this)}/></Segment>
+            <Segment textAlign='center'>Password: <Input placeholder='Password...' type="password" onChange={this.passwordInsert.bind(this)}/></Segment>
             <Segment textAlign='center' onClick={this.checkUser.bind(this)}><Button>Login</Button></Segment>
           </Segment.Group>
           <Segment textAlign='center'><Button onClick={this.signUp.bind(this)}>First Time User?</Button></Segment>
